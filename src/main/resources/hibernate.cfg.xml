@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--dtd and xsd are usd in order to use these tags-->
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/xsd/orm/cfg/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<!--    in order to create a datasource, we need this session-factory to do so.-->
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernateDemo</property>
+        <property name="hibernate.connection.username">mib</property>
+        <property name="hibernate.connection.password">imtheDANGER@218</property>
+
+        <!-- Specify dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+
+        <!-- Mention annotated class -->
+        <mapping class="org.example.entity.Alien"/>
+        <mapping class="org.example.entity.Laptop"/>
+        <mapping class="org.example.entity.Client"/>
+        <mapping class="org.example.entity.Server"/>
+    </session-factory>
+</hibernate-configuration>
